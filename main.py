@@ -2,6 +2,8 @@ from src.datascience import logger
 from src.datascience.pipeline.data_ingestion_pipeline import DataIngestionPipeline
 from src.datascience.pipeline.data_validation_pipeline import DataValidationPipeline
 from src.datascience.pipeline.data_transformation_pipeline import DataTransformationPipeline
+from src.datascience.pipeline.model_trainer_pipeline import ModelTrainerPipeline
+
 
 STAGE_NAME = "Data Investigation"
 
@@ -35,6 +37,18 @@ if __name__ == "__main__":
         logger.info(f">>>>>>>>>>>>{STAGE_NAME} started<<<<<<<<<<<")
         obj = DataTransformationPipeline()
         obj.init_data_transformation()
+        logger.info(f">>>>>>>>>>>>{STAGE_NAME} completed<<<<<<<<<<<")
+    except Exception as e:
+        logger.exception(e)
+        raise
+
+STAGE_NAME = "Training Model"
+
+if __name__ == "__main__":
+    try:
+        logger.info(f">>>>>>>>>>>>{STAGE_NAME} started<<<<<<<<<<<")
+        obj = ModelTrainerPipeline()
+        obj.init_model_trainer()
         logger.info(f">>>>>>>>>>>>{STAGE_NAME} completed<<<<<<<<<<<")
     except Exception as e:
         logger.exception(e)
