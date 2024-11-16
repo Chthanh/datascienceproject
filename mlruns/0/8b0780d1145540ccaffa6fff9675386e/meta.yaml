@@ -1,0 +1,15 @@
+artifact_uri: file:///home/thanh/Desktop/LMOps/datascienceproject/mlruns/0/8b0780d1145540ccaffa6fff9675386e/artifacts
+end_time: 1731781204626
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8b0780d1145540ccaffa6fff9675386e
+run_name: useful-skunk-900
+run_uuid: 8b0780d1145540ccaffa6fff9675386e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731781203338
+status: 3
+tags: []
+user_id: thanh

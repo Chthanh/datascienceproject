@@ -3,6 +3,7 @@ from src.datascience.pipeline.data_ingestion_pipeline import DataIngestionPipeli
 from src.datascience.pipeline.data_validation_pipeline import DataValidationPipeline
 from src.datascience.pipeline.data_transformation_pipeline import DataTransformationPipeline
 from src.datascience.pipeline.model_trainer_pipeline import ModelTrainerPipeline
+from src.datascience.pipeline.model_evaluation_pipeline import ModelEvaluationPipeline
 
 
 STAGE_NAME = "Data Investigation"
@@ -18,9 +19,7 @@ if __name__ == "__main__":
         raise
 
 
-STAGE_NAME = "Data Validation"
-
-if __name__ == "__main__":
+    STAGE_NAME = "Data Validation"
     try:
         logger.info(f">>>>>>>>>>>>{STAGE_NAME} started<<<<<<<<<<<")
         obj = DataValidationPipeline()
@@ -30,9 +29,7 @@ if __name__ == "__main__":
         logger.exception(e)
         raise
 
-STAGE_NAME = "Data Transformation"
-
-if __name__ == "__main__":
+    STAGE_NAME = "Data Transformation"
     try:
         logger.info(f">>>>>>>>>>>>{STAGE_NAME} started<<<<<<<<<<<")
         obj = DataTransformationPipeline()
@@ -42,13 +39,21 @@ if __name__ == "__main__":
         logger.exception(e)
         raise
 
-STAGE_NAME = "Training Model"
-
-if __name__ == "__main__":
+    STAGE_NAME = "Training Model"
     try:
         logger.info(f">>>>>>>>>>>>{STAGE_NAME} started<<<<<<<<<<<")
         obj = ModelTrainerPipeline()
         obj.init_model_trainer()
+        logger.info(f">>>>>>>>>>>>{STAGE_NAME} completed<<<<<<<<<<<")
+    except Exception as e:
+        logger.exception(e)
+        raise
+
+    STAGE_NAME = "Model Evaluation"
+    try:
+        logger.info(f">>>>>>>>>>>>{STAGE_NAME} started<<<<<<<<<<<")
+        obj = ModelEvaluationPipeline()
+        obj.init_model_evaluation()
         logger.info(f">>>>>>>>>>>>{STAGE_NAME} completed<<<<<<<<<<<")
     except Exception as e:
         logger.exception(e)

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/thanh/Desktop/LMOps/datascienceproject/mlruns/0/1c8c0a53f25a47c4afcf648d9082c61b/artifacts
+end_time: 1731780521389
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1c8c0a53f25a47c4afcf648d9082c61b
+run_name: orderly-kit-687
+run_uuid: 1c8c0a53f25a47c4afcf648d9082c61b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731780520174
+status: 3
+tags: []
+user_id: thanh

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/thanh/Desktop/LMOps/datascienceproject/mlruns/0/c058211ecc854937897d057670074d13/artifacts
+end_time: 1731780409144
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c058211ecc854937897d057670074d13
+run_name: vaunted-fowl-441
+run_uuid: c058211ecc854937897d057670074d13
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731780407858
+status: 3
+tags: []
+user_id: thanh
