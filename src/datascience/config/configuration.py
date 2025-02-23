@@ -4,9 +4,16 @@ from src.datascience.entity.config_entity import DataIngestionConfig, DataValida
     DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig
 import os 
 
-os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/mcthanh/datascienceproject.mlflow"
-os.environ["MLFLOW_TRACKING_USERNAME"]="mcthanh"
-os.environ["MLFLOW_TRACKING_PASSWORD"]="384b14e88ed0aeb79bad605e77aa90a307ce1bbe"
+from dotenv import load_dotenv
+load_dotenv()
+
+mlflow_url = os.getenv("MLFLOW_TRACKING_URI")
+mlfow_username = os.getenv("MLFLOW_TRACKING_USERNAME")
+mlflow_password = os.getenv("MLFLOW_TRACKING_PASSWORD")
+
+os.environ["MLFLOW_TRACKING_URI"]=mlflow_url
+os.environ["MLFLOW_TRACKING_USERNAME"]=mlfow_username
+os.environ["MLFLOW_TRACKING_PASSWORD"]=mlflow_password
 
 class ConfigurationManager:
     def __init__(self,
@@ -93,8 +100,6 @@ class ConfigurationManager:
             all_params=params,
             metric_file_name = config.metric_file_name,
             target_column = schema.name,
-            mlflow_uri="https://dagshub.com/mcthanh/datascienceproject.mlflow"
-
-
+            mlflow_uri=mlflow_url
         )
         return model_evaluation_config
